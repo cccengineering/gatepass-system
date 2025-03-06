@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gatepass Search</title>
+    <title>CCCE Gatepass Verification System</title>
     <style>
         /* ব্যাকগ্রাউন্ড কালার এবং পৃষ্ঠা স্টাইল */
         body {
-            background-color: #f0f8ff; /* হালকা নীল রং */
+            background-color: #CEE1DD; /* হালকা সি-গ্রিন */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,7 +18,7 @@
 
         /* সার্চ ফর্ম স্টাইল */
         #searchForm {
-            background-color: #ffffff; /* সাদা রং */
+            background-color: #349278; /* সবজাভাবযুক্ত টিল রং */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,29 +35,27 @@
         }
 
         /* সার্চ বাটন স্টাইল */
-        button {
-            padding: 10px 20px;
-            background-color: #007bff; /* নীল রং */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+       button {
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out; /* এনিমেশনের জন্য */
+}
 
-        button:hover {
-            background-color: #0056b3; /* গাঢ় নীল রং */
-        }
+		button:hover {
+			background-color: #0056b3;
+			transform: scale(1.1); /* সামান্য বড় হবে */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ছায়া যোগ হবে */
+}
 
-        /* ফলাফল বার্তা স্টাইল */
-        #result {
-            margin-top: 20px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
     <div>
-        <h1>Gatepass Search</h1>
+        <h1>Verify your Gatepass</h1>
         <form id="searchForm">
             <label for="gatepassId">Gatepass ID:</label><br>
             <input type="text" id="gatepassId" name="gatepassId" required><br><br>
