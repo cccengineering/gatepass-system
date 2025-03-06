@@ -4,16 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gatepass Search</title>
+    <style>
+        /* ব্যাকগ্রাউন্ড কালার এবং পৃষ্ঠা স্টাইল */
+        body {
+            background-color: #f0f8ff; /* হালকা নীল রং */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* সার্চ ফর্ম স্টাইল */
+        #searchForm {
+            background-color: #ffffff; /* সাদা রং */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* ইনপুট ফিল্ড স্টাইল */
+        #gatepassId {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        /* সার্চ বাটন স্টাইল */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; /* নীল রং */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* গাঢ় নীল রং */
+        }
+
+        /* ফলাফল বার্তা স্টাইল */
+        #result {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Gatepass Search</h1>
-    <form id="searchForm">
-        <label for="gatepassId">Gatepass ID:</label>
-        <input type="text" id="gatepassId" name="gatepassId" required>
-        <button type="submit">Search</button>
-    </form>
-
-    <div id="result"></div>
+    <div>
+        <h1>Gatepass Search</h1>
+        <form id="searchForm">
+            <label for="gatepassId">Gatepass ID:</label><br>
+            <input type="text" id="gatepassId" name="gatepassId" required><br><br>
+            <button type="submit">Search</button>
+        </form>
+        <div id="result"></div>
+    </div>
 
     <script>
         document.getElementById('searchForm').addEventListener('submit', function(event) {
