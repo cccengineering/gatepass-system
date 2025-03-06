@@ -66,25 +66,30 @@
 
     <script>
         document.getElementById('searchForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // ফর্ম সাবমিশন বন্ধ করুন
-            const gatepassId = document.getElementById('gatepassId').value; // আইডি নিন
-            const pdfUrl = `./${gatepassId}.pdf`; // পিডিএফ ফাইলের URL তৈরি করুন
+    event.preventDefault(); // ফর্ম সাবমিশন বন্ধ করুন
+    const gatepassId = document.getElementById('gatepassId').value; // আইডি নিন
+    const pdfUrl = `./${gatepassId}.pdf`; // পিডিএফ ফাইলের URL তৈরি করুন
 
-            // পিডিএফ ফাইলটি লোড করুন
-            fetch(pdfUrl)
-                .then(response => {
-                    if (response.ok) {
-                        // পিডিএফ ফাইলটি ব্রাউজারে খুলুন
-                        window.open(pdfUrl, '_blank');
-                    } else {
-                        // ফাইল না পাওয়া গেলে একটি বার্তা দেখান
-                        document.getElementById('result').innerText = 'Gatepass not found!';
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('result').innerText = 'An error occurred. Please try again.';
-                });
+    // পিডিএফ ফাইলটি লোড করুন
+    fetch(pdfUrl)
+        .then(response => {
+            const resultDiv = document.getElementById('result'); // রেজাল্ট ডিভ নিন
+            if (response.ok) {
+                // পিডিএফ ফাইল পাওয়া গেলে ব্রাউজারে খুলুন
+                window.open(pdfUrl, '_blank');
+                
+                // সফল মেসেজ দেখান
+                resultDiv.innerHTML = `<span style="color: green; font-weight: bold;">✅ Gate Pass is Verified!</span>`;
+            } else {
+                // ফাইল না পাওয়া গেলে একটি বার্তা দেখান
+                resultDiv.innerHTML = `<span style="color: red; font-weight: bold;">❌ Gate Pass not found!</span>`;
+            }
+        })
+        .catch(error => {
+            document.getElementById('result').innerText = 'An error occurred. Please try again.';
         });
+});
+
     </script>
 </body>
 </html>
