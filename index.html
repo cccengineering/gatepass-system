@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatepass Search</title>
+</head>
+<body>
+    <h1>Gatepass Search</h1>
+    <form id="searchForm">
+        <label for="gatepassId">Gatepass ID:</label>
+        <input type="text" id="gatepassId" name="gatepassId" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const gatepassId = document.getElementById('gatepassId').value;
+            window.location.href = `./${gatepassId}/`;
+        });
+    </script>
+</body>
+</html>
