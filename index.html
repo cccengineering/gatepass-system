@@ -66,12 +66,12 @@
 
     <script>
         document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // ফর্ম সাবমিশন বন্ধ করুন
-    const gatepassId = document.getElementById('gatepassId').value; // আইডি নিন
-    const pdfUrl = `./${gatepassId}.pdf`; // পিডিএফ ফাইলের URL তৈরি করুন
+            event.preventDefault(); // ফর্ম সাবমিশন বন্ধ করুন
+            const gatepassId = document.getElementById('gatepassId').value; // আইডি নিন
+            const pdfUrl = `./${gatepassId}.pdf`; // পিডিএফ ফাইলের URL তৈরি করুন
 
-    // পিডিএফ ফাইলটি লোড করুন
-    fetch(pdfUrl)
+            // পিডিএফ ফাইলটি লোড করুন
+            fetch(pdfUrl)
     .then(response => {
         const resultDiv = document.getElementById('result'); // রেজাল্ট ডিভ নিন
         if (response.ok) {
@@ -89,7 +89,6 @@
     .catch(error => {
         document.getElementById('result').innerText = 'An error occurred. Please try again.';
     });
-
 
     </script>
 </body>
